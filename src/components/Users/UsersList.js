@@ -8,6 +8,7 @@ const UsersList = (props) => {
    return (
       <Card className={classes.users}>
          <ul>
+            {props.users.length === 0 && <p>No users in the list</p>}
             {props.users.map((user) => {
                return (
                   <li key={user.id}>

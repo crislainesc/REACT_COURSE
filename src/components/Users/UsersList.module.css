@@ -14,3 +14,10 @@
   margin: 0.5rem 0;
   padding: 0.5rem;
 }
+
+.users p {
+   text-align: center;
+   font-weight: bold;
+   font-style: italic;
+   color: #4f005f;
+}
