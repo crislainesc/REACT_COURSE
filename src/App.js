@@ -13,6 +13,15 @@ const App = () => {
   const addGoalHandler = enteredText => {
     setCourseGoals(prevGoals => {
       const updatedGoals = [...prevGoals];
+      // Warning: Encountered two children with the same key, `goal1`. 
+      // Keys should be unique so that components maintain their identity across updates. 
+      // Non-unique keys may cause children to be duplicated and/or omitted — the behavior is 
+      // unsupported and could change in a future version.
+      // at ul
+      // at CourseGoalList (http://localhost:3000/static/js/main.chunk.js:764:21)
+      // at section
+      // at div
+      // at App (http://localhost:3000/static/js/main.chunk.js:266:95)
       updatedGoals.unshift({ text: enteredText, id: 'goal1' });
       return updatedGoals;
     });
