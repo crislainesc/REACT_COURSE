@@ -12,3 +12,5 @@ This repository contains the source code of the React course of the React module
 - [04 - React State & Working with Events](https://github.com/crislainesc/react-course/tree/04-react-state-events)
 - [05 - Rendering Lists & Conditional Content](https://github.com/crislainesc/react-course/tree/05-rendering-lists-conditional-content)
 - [06 - Styling React Components](https://github.com/crislainesc/react-course/tree/06-styling-react-components)
+- [07 - Debugging React Apps](https://github.com/crislainesc/react-course/tree/07-debugging-react-apps)
+- [08 - Time to Practice: A Complete Practice Project](https://github.com/crislainesc/react-course/tree/08-practice-project)
