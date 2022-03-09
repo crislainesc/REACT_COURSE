@@ -14,3 +14,4 @@ This repository contains the source code of the React course of the React module
 - [06 - Styling React Components](https://github.com/crislainesc/react-course/tree/06-styling-react-components)
 - [07 - Debugging React Apps](https://github.com/crislainesc/react-course/tree/07-debugging-react-apps)
 - [08 - Time to Practice: A Complete Practice Project](https://github.com/crislainesc/react-course/tree/08-practice-project)
+- [09 - Diving Deeper: Working with Fragments, Portals & "Refs"](https://github.com/crislainesc/react-course/tree/09-fragments-portals-refs)
