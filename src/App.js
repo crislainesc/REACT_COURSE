@@ -22,7 +22,7 @@ const App = () => {
       // at section
       // at div
       // at App (http://localhost:3000/static/js/main.chunk.js:266:95)
-      updatedGoals.unshift({ text: enteredText, id: 'goal1' });
+      updatedGoals.unshift({ text: enteredText, id: Math.random().toString() });
       return updatedGoals;
     });
   };
