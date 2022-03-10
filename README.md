@@ -15,3 +15,5 @@ This repository contains the source code of the React course of the React module
 - [07 - Debugging React Apps](https://github.com/crislainesc/react-course/tree/07-debugging-react-apps)
 - [08 - Time to Practice: A Complete Practice Project](https://github.com/crislainesc/react-course/tree/08-practice-project)
 - [09 - Diving Deeper: Working with Fragments, Portals & "Refs"](https://github.com/crislainesc/react-course/tree/09-fragments-portals-refs)
+- [10 - Advanced: Handling Side Effects, Using Reducers & Using the Context API](https://github.com/crislainesc/react-course/tree/10-side-effects-reducers-context-api)
+- [11 - Practice Project: Building a Food Order App](https://github.com/crislainesc/react-course/tree/11-practice-food-order-app)
