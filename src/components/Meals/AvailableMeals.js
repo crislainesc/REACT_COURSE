@@ -4,7 +4,8 @@ import classes from './AvailableMeals.module.css';
 import { useEffect, useState } from 'react';
 
 const AvailableMeals = () => {
-  const [meals, setMeals] = useState([])
+  const [meals, setMeals] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
 
@@ -24,12 +25,19 @@ const AvailableMeals = () => {
         })
       }
 
-      setMeals(loadedMeals)
+      setMeals(loadedMeals);
+      setIsLoading(false);
     }
 
     fetchMeals();
 
   }, [])
+
+  if(isLoading) {
+    return <section className={classes.MealsLoading}>
+      <p>Loading...</p>
+    </section>
+  }
 
 
   const mealsList = meals.map((meal) => (
