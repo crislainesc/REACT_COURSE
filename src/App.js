@@ -7,8 +7,8 @@ function App() {
   return (
       <Routes>
         <Route path="/" exact element={<Navigate to='/quotes' />} />
-        <Route path="/quotes" exact element={<AllQuotes />} />
-        <Route path="/quotes/:quoteId" element={<QuoteDetail />} />
+        <Route path="/quotes/" exact element={<AllQuotes />} />
+        <Route path="/quotes/:quoteId/*" element={<QuoteDetail />} />
         <Route path="/new-quote" element={<NewQuote />} />
       </Routes>
   );
