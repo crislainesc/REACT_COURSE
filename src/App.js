@@ -1,5 +1,6 @@
 import { Route, Routes } from 'react-router-dom'
 import MainHeader from './components/MainHeader';
+import ProductDetail from './pages/ProductDetail';
 import Products from './pages/Products';
 import Welcome from './pages/Welcome';
 
@@ -14,6 +15,7 @@ function App() {
           <Route path='/' element={<p>Hello Woooorld!</p>} />
           <Route path='/welcome' element={<Welcome />} />
           <Route path='/products' element={<Products />} />
+          <Route path='/product-detail/:productId' element={<ProductDetail />} />
         </Routes>
       </main>
     </div>
@@ -24,10 +26,7 @@ export default App;
 
 // our-domani.com/ => Component A
 // our-domain.com/product => Component B
-
-
-// our-domani.com/ => Component A
-// our-domain.com/product => Component B
+// our-domain.com/product-details/a-book => Component C
 
 
 // Versão Antiga da Lib:
