@@ -12,10 +12,10 @@ function App() {
       </header>
       <main>
         <Routes>
-          <Route path='/' element={<p>Hello Woooorld!</p>} />
-          <Route path='/welcome' element={<Welcome />} />
-          <Route path='/products' element={<Products />} />
-          <Route path='/product-detail/:productId' element={<ProductDetail />} />
+            <Route path='/' element={<p>Hello Woooorld!</p>} />
+            <Route path='/welcome' element={<Welcome />} />
+            <Route path='/products' element={<Products />} exact />
+            <Route path='/products/:productId' element={<ProductDetail />} />
         </Routes>
       </main>
     </div>
