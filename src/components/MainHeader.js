@@ -1,27 +1,23 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
+import classes from './MainHeader.module.css'
 
 const MainHeader = () => {
-   const styles = {
-      background: '#069cc2',
-      borderRadius: '6px',
-      padding: '15px',
-      cursor: 'pointer',
-      color: '#fff',
-      border: 'none',
-      fontSize: '16px',
-      margin: '10px'
-   }
-
    return (
-      <header>
+      <header className={classes.header}>
          <nav>
             <ul>
                <li>
-               <Link to="/welcome"><button style={styles}>Welcome</button></Link>
+                  <NavLink className={({ isActive }) => isActive ? classes.active : ''}
+                     to="/welcome">
+                     Welcome
+                  </NavLink>
                </li>
                <li>
-                  <Link to="/products"><button style={styles}>Products</button></Link>
+                  <NavLink
+                     className={({ isActive }) => isActive ? classes.active : ''}
+                     to="/products">
+                     Products
+                  </NavLink>
                </li>
             </ul>
          </nav>
