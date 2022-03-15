@@ -1,45 +1,16 @@
-import { Route, Routes, Navigate } from 'react-router-dom'
-import MainHeader from './components/MainHeader';
-import ProductDetail from './pages/ProductDetail';
-import Products from './pages/Products';
-import Welcome from './pages/Welcome';
+import { Route, Routes } from 'react-router-dom'
+import AllQuotes from "./pages/AllQuotes";
+import NewQuote from './pages/NewQuote';
+import QuoteDetail from './pages/QuoteDetail';
 
 function App() {
   return (
-    <div>
-      <header>
-        <MainHeader />
-      </header>
-      <main>
-        <Routes>
-          <Route path='/' exact element={<Navigate to='/welcome' />} />
-          <Route path='/welcome/*' element={<Welcome />} />
-          <Route path='/products' element={<Products />} exact />
-          <Route path='/products/:productId' element={<ProductDetail />} />
-        </Routes>
-      </main>
-    </div>
+      <Routes>
+        <Route path="/quotes" exact element={<AllQuotes />} />
+        <Route path="/quotes/:quoteId" element={<QuoteDetail />} />
+        <Route path="/new-quote" element={<NewQuote />} />
+      </Routes>
   );
 }
 
 export default App;
-
-// our-domani.com/ => Component A
-// our-domain.com/product => Component B
-// our-domain.com/product-details/a-book => Component C
-
-
-// Versão Antiga da Lib:
-
-// function App() {
-//   return (
-//     <div>
-//       <Route path='/welcome'>
-//         <Welcome />
-//       </Route>
-//       <Route path='/products'>
-//         <Products />
-//       </Route>
-//     </div>
-//   );
-// }
