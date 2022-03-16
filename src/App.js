@@ -6,17 +6,6 @@ import NotFound from './pages/NotFound';
 import QuoteDetail from './pages/QuoteDetail';
 
 function App() {
-
-  const [confirm, setConfirm] = useState(false);
-  const [confirmCallback, setConfirmCallback] = useState(null);
-
-  function getConfirmationWithExtraParameters(whateverYouWantToPass) {
-    return function getUserConfirmation(message, callback) {
-      setConfirmCallback(() => callback);
-      setConfirm(true);
-    };
-  }
-
   return (
     <Layout>
       <Routes>

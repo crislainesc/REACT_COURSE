@@ -16,6 +16,8 @@ const MainNavigation = () => {
                      className={({ isActive }) => isActive ? classes.active : ''}
                   >All Quotes
                   </NavLink>
+               </li>
+               <li>
                   <NavLink
                      to='/new-quote'
                      className={({ isActive }) => isActive ? classes.active : ''}
