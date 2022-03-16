@@ -1,5 +1,5 @@
 import { Fragment } from 'react';
-import { useParams, Routes, Route, Link } from 'react-router-dom';
+import { useParams, Routes, Route, Link, useMatch } from 'react-router-dom';
 import Comments from '../components/comments/Comments';
 import HighlightedQuote from '../components/quotes/HighlightedQuote';
 
@@ -12,13 +12,19 @@ const LoadCommentsButton = (props) => {
    return (
       <div className='centered'>
          <Link className='btn--flat'
-            to={`/quotes/${props.id}/comments`}>Load Comments</Link>
+            to={`${props.to}`}>Load Comments
+         </Link>
       </div>
    )
 }
 
 const QuoteDetail = () => {
+
    const params = useParams();
+
+   const match = useMatch(`*`);
+   console.log(match);
+
 
    const quote = DUMMY_QUOTES.find(quote => quote.id === params.quoteId);
 
@@ -34,8 +40,8 @@ const QuoteDetail = () => {
          />
 
          <Routes>
-            <Route path={`/`} exact element={<LoadCommentsButton id={params.quoteId} />} />
             <Route path={`/comments`} element={<Comments />} />
+            <Route path={`/`} exact element={<LoadCommentsButton to={`${match.pathname}/comments`} />} />
          </Routes>
       </Fragment>
    );

@@ -6,8 +6,6 @@ import classes from './QuoteForm.module.css';
 
 const QuoteForm = (props) => {
   const [isEntered, setIsEntered] = useState(false);
-  const [confirm, setConfirm] = useState(false);
-  const [confirmCallBack, setConfirmCallBack] = useState(null);
 
   const authorInputRef = useRef();
   const textInputRef = useRef();
