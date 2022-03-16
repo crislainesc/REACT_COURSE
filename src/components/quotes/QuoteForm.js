@@ -22,6 +22,7 @@ const QuoteForm = (props) => {
   }
 
   const finishEnteringHandler = () => {
+    console.log(isEntered)
     setIsEntered(false);
   }
 
