@@ -1,33 +1,8 @@
-import MeetupList from '../components/meetups/MeetupList'
-
-const DUMMY_MEETUPS = [
-   {
-      id: 'm1',
-      image: 'https://psiueducacao.com/wp-content/uploads/2018/08/meetup-o-que-e-e-como-utilizar-na-sua-estrategia-de-comunicacao.jpeg',
-      title: 'A First Meetup',
-      address: 'Some adress 5, 12345 Some City',
-      description: 'This is a first meetup!'
-   },
-   {
-      id: 'm2',
-      image: 'https://psiueducacao.com/wp-content/uploads/2018/08/meetup-o-que-e-e-como-utilizar-na-sua-estrategia-de-comunicacao.jpeg',
-      title: 'A Second Meetup',
-      address: 'Some adress 10, 12345 Some City',
-      description: 'This is a second meetup!'
-   },
-   {
-      id: 'm3',
-      image: 'https://psiueducacao.com/wp-content/uploads/2018/08/meetup-o-que-e-e-como-utilizar-na-sua-estrategia-de-comunicacao.jpeg',
-      title: 'A Third Meetup',
-      address: 'Some adress 15, 12345 Some City',
-      description: 'This is a third meetup!'
-   }
-]
+import { MongoClient } from "mongodb";
+import MeetupList from "../components/meetups/MeetupList";
 
 function HomePage(props) {
-   return (
-      <MeetupList meetups={props.meetups} />
-   )
+  return <MeetupList meetups={props.meetups} />;
 }
 
 // export async function getServerSideProps(context) {
@@ -43,13 +18,31 @@ function HomePage(props) {
 // }
 
 export async function getStaticProps() {
-   // fetch data from an API
-   return {
-      props: {
-         meetups: DUMMY_MEETUPS
-      },
-      revalidate: 10
-   };
+  // fetch data from an API
+  const client = await MongoClient.connect(
+    "[MONGODB DATABASE URL]"
+  );
+
+  const db = client.db();
+
+  const meetupsColletction = db.collection("meetups");
+
+  const meetups = await meetupsColletction.find().toArray();
+
+  client.close();
+
+  return {
+    props: {
+      meetups: meetups.map((meetup) => ({
+        title: meetup.title,
+        address: meetup.address,
+        description: meetup.description,
+        image: meetup.image,
+        id: meetup._id.toString(),
+      })),
+    },
+    revalidate: 10,
+  };
 }
 
 export default HomePage;
