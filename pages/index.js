@@ -24,7 +24,7 @@ const DUMMY_MEETUPS = [
    }
 ]
 
-function HomePage(params) {
+function HomePage() {
    return (
       <MeetupList meetups={DUMMY_MEETUPS} />
    )
