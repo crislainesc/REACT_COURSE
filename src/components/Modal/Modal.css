@@ -18,7 +18,21 @@
 }
 
 .ModalClosed {
-    animation: closeModal 1s ease-out forwards;
+  animation: openModal 0.3s ease-out forwards;
+}
+
+.fade-slide-enter {
+}
+
+.fade-slide-enter-active {
+  animation: openModal 0.3s ease-out forwards;
+}
+
+.fade-slide-exit {
+}
+
+.fade-slide-exit-active {
+  animation: openModal 0.3s ease-out forwards;
 }
 
 @keyframes openModal {
@@ -37,17 +51,16 @@
 }
 
 @keyframes closeModal {
-    0% {
-      opacity: 1;
-      transform: translateY(0);
-    }
-    50% {
-      opacity: 0;
-      transform: translateY(60%);
-    }
-    100% {
-      opacity: 0;
-      transform: translateY(-100%);
-    }
+  0% {
+    opacity: 1;
+    transform: translateY(0);
   }
-  
+  50% {
+    opacity: 0;
+    transform: translateY(60%);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+}
