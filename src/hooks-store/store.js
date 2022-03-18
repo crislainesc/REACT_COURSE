@@ -4,12 +4,12 @@ let globalState = {}
 let listeners = []
 let actions = {}
 
-export const useStore = () => {
+export const useStore = (sholdListen = true) => {
    const setState = useState(globalState)[1];
 
    const dispatch = (actionIdentifier, payload) => {
       const newState = actions[actionIdentifier](globalState, payload)
-      globalState = {...globalState, ...newState}
+      globalState = { ...globalState, ...newState }
 
       for (const listener of listeners) {
          listener(globalState)
@@ -17,20 +17,24 @@ export const useStore = () => {
    }
 
    useEffect(() => {
-      listeners.push(setState);
-
-      return () => {
-         listeners = listeners.filter(li => li !== setState);
+      if (sholdListen) {
+         listeners.push(setState);
       }
 
-   }, [setState])
+      return () => {
+         if(sholdListen) {
+            listeners = listeners.filter(li => li !== setState);
+         }
+      }
+
+   }, [setState, sholdListen])
 
    return [globalState, dispatch]
 }
 
 export const initStore = (userActions, initialState) => {
-   if(initialState) {
-      globalState = {...globalState, ...initialState}
+   if (initialState) {
+      globalState = { ...globalState, ...initialState }
    }
-   actions = {...actions, ...userActions}
+   actions = { ...actions, ...userActions }
 }
