@@ -9,7 +9,6 @@ const Products = props => {
 
   const productList = productsContext.products;
 
-  console.log(productsContext.products)
   return (
     <ul className="products-list">
       {productList.map(product => (
