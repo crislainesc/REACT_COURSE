@@ -5,18 +5,16 @@ import { useStore } from '../hooks-store/store';
 import './Products.css';
 
 const Products = props => {
-
   const state = useStore()[0];
-
   return (
     <ul className="products-list">
-      {state.products.map(product => (
+      {state.products.map(prod => (
         <ProductItem
-          key={product.id}
-          id={product.id}
-          title={product.title}
-          description={product.description}
-          isFav={product.isFavorite}
+          key={prod.id}
+          id={prod.id}
+          title={prod.title}
+          description={prod.description}
+          isFav={prod.isFavorite}
         />
       ))}
     </ul>

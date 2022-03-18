@@ -5,21 +5,18 @@ import { useStore } from '../hooks-store/store';
 import './Products.css';
 
 const Favorites = props => {
-
   const state = useStore()[0];
-
-  const favoriteProducts = state.products.filter(product => product.isFavorite);
-
+  const favoriteProducts = state.products.filter(p => p.isFavorite);
   let content = <p className="placeholder">Got no favorites yet!</p>;
   if (favoriteProducts.length > 0) {
     content = (
       <ul className="products-list">
-        {favoriteProducts.map(product => (
+        {favoriteProducts.map(prod => (
           <FavoriteItem
-            key={product.id}
-            id={product.id}
-            title={product.title}
-            description={product.description}
+            key={prod.id}
+            id={prod.id}
+            title={prod.title}
+            description={prod.description}
           />
         ))}
       </ul>
