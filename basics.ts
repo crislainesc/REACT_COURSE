@@ -20,6 +20,14 @@ let hobbies: string[];
 
 hobbies = ["Sports", "Cooking"];
 
+// Type Aliases
+type Person = {
+	name: string;
+	age: number;
+};
+
+//
+
 let person: {
 	name: string;
 	age: number;
@@ -34,11 +42,7 @@ person = {
 // 	isEmployee: true,
 // };
 
-let people: {
-	name: string;
-	age: number;
-}[];
-
+let people: Person[];
 
 // Type inference
 
@@ -48,6 +52,6 @@ let people: {
 
 // Union Types
 
-let course: string | number = 'React - the complete guide'
+let course: string | number = "React - the complete guide";
 
 course = 12;
