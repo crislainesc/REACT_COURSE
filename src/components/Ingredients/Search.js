@@ -10,7 +10,7 @@ const Search = React.memo(props => {
   const [enteredFilter, setEnteredFilter] = useState('');
 
   useEffect(() => {
-    const query = enteredFilter.length === 0 ? '' : `?orderBy="title"&equalTo=${enteredFilter}`
+    const query = enteredFilter.length === 0 ? '' : `?orderBy="title"&equalTo="${enteredFilter}"`
     fetch('https://react-http-75081-default-rtdb.firebaseio.com/ingredients.json' + query).then(response => {
       return response.json()
     }).then(responseData => {
