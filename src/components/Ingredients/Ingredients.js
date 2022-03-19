@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import IngredientForm from './IngredientForm';
 import IngredientList from './IngredientList';
@@ -9,9 +9,19 @@ function Ingredients() {
   const [userIngredients, setUserIngredients] = useState([]);
 
   const addIngredientHandler = ingredient => {
-    setUserIngredients(prevIngredients =>
-      [...prevIngredients, { id: Math.random().toString(), ...ingredient }]
-    )
+    fetch('https://react-http-75081-default-rtdb.firebaseio.com/ingredients.json', {
+      method: 'POST',
+      body: JSON.stringify(ingredient),
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    }).then(response => {
+      return response.json()
+    }).then(responseData => {
+      setUserIngredients(prevIngredients =>
+        [...prevIngredients, { id: responseData.name, ...ingredient }]
+      )
+    })
   }
 
   const removeIngredientHandler = ingredientId => {
