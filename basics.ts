@@ -38,3 +38,16 @@ let people: {
 	name: string;
 	age: number;
 }[];
+
+
+// Type inference
+
+// let course = 'React - the complete guide'
+
+// course = 12;
+
+// Union Types
+
+let course: string | number = 'React - the complete guide'
+
+course = 12;
