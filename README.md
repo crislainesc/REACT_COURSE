@@ -25,4 +25,14 @@ This repository contains the source code of the React course of the React module
 - [17 - Practice Project: Adding Http & Forms To The Food Order App](https://github.com/crislainesc/react-course/tree/17-practice-food-order-http-forms)
 - [18 - Diving into Redux (An Alternative To The Context API)](https://github.com/crislainesc/react-course/tree/18-diving-into-redux)
 - [19 - Advanced Redux](https://github.com/crislainesc/react-course/tree/19-advanced-redux)
-
+- [20 - Building a Multi-Page SPA with React Router](https://github.com/crislainesc/react-course/tree/20-building-mpas-with-react-router)
+- [21 - Deploying React Apps](https://github.com/crislainesc/react-course/tree/21-deploying-react-apps)
+- [22 - Adding Authentication To React Apps](https://github.com/crislainesc/react-course/tree/22-authentication)
+- [23 - A (Pretty Deep Dive) Introduction to Next.js](https://github.com/crislainesc/react-course/tree/23-nextjs-introduction)
+- [24 - Animating React Apps](https://github.com/crislainesc/react-course/tree/24-animations)
+- [25 - Replacing Redux with React Hooks](https://github.com/crislainesc/react-course/tree/25-replacing-redux)
+- [26 - Testing React Apps (Unit Tests)](https://github.com/crislainesc/react-course/tree/26-testing)
+- [27 - React + TypeScript](https://github.com/crislainesc/react-course/tree/27-react-typescript)
+- [28 - React Hooks Introduction & Summary](https://github.com/crislainesc/react-course/tree/28-react-hooks-intro-and-summary)
+- [29 - React Summary & Core Feature Walkthrough](https://github.com/crislainesc/react-course/tree/29-reactjs-summary)
+- 30: Course Roundup
