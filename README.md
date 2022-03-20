@@ -35,4 +35,4 @@ This repository contains the source code of the React course of the React module
 - [27 - React + TypeScript](https://github.com/crislainesc/react-course/tree/27-react-typescript)
 - [28 - React Hooks Introduction & Summary](https://github.com/crislainesc/react-course/tree/28-react-hooks-intro-and-summary)
 - [29 - React Summary & Core Feature Walkthrough](https://github.com/crislainesc/react-course/tree/29-reactjs-summary)
-- 30: Course Roundup
+- 30 - Course Roundup
