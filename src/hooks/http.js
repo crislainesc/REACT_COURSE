@@ -1,5 +1,13 @@
 import { useReducer, useCallback } from 'react';
 
+const inititalState = {
+  loading: false,
+  error: null,
+  data: null,
+  extra: null,
+  identifier: null
+}
+
 const httpReducer = (curHttpState, action) => {
   switch (action.type) {
     case 'SEND':
@@ -20,20 +28,19 @@ const httpReducer = (curHttpState, action) => {
     case 'ERROR':
       return { loading: false, error: action.errorMessage };
     case 'CLEAR':
-      return { ...curHttpState, error: null };
+      return inititalState
+
     default:
       throw new Error('Should not be reached!');
   }
 };
 
 const useHttp = () => {
-  const [httpState, dispatchHttp] = useReducer(httpReducer, {
-    loading: false,
-    error: null,
-    data: null,
-    extra: null,
-    identifier: null
-  });
+  const [httpState, dispatchHttp] = useReducer(httpReducer, inititalState);
+
+  const clear = useCallback(() => {
+    dispatchHttp({ type: 'CLEAR' })
+  }, [])
 
   const sendRequest = useCallback(
     (url, method, body, reqExtra, reqIdentifer) => {
@@ -71,7 +78,8 @@ const useHttp = () => {
     error: httpState.error,
     sendRequest: sendRequest,
     reqExtra: httpState.extra,
-    reqIdentifer: httpState.identifier
+    reqIdentifer: httpState.identifier,
+    clear: clear
   };
 };
 
