@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import MeetupList from '../components/meetups/MeetupList';
 
 const AllMeetupsPage = () => {
@@ -6,15 +6,31 @@ const AllMeetupsPage = () => {
    const [isLoading, setIsLoading] = useState(true)
    const [loadedMeetups, setLoadedMeetups] = useState([]);
 
-   fetch('https://react-http-75081-default-rtdb.firebaseio.com/meetups.json'
-   ).then(response => {
-      return response.json()
-   }).then(data => {
-      setIsLoading(false)
-      setLoadedMeetups(data)
-   })
+   useEffect(() => {
+      setIsLoading(true)
+      fetch('https://react-http-75081-default-rtdb.firebaseio.com/meetups.json'
+      ).then(response => {
+         return response.json()
+      }).then(data => {
+         setIsLoading(false);
 
-   if(isLoading) {
+         const loadedData = []
+
+         for (const key in data) {
+            loadedData.push({
+               id: key,
+               title: data[key].title,
+               adress: data[key].adress,
+               image: data[key].image,
+               description: data[key].description,
+            })
+         }
+
+         setLoadedMeetups(loadedData)
+      })
+   }, [])
+
+   if (isLoading) {
       return <section>
          <p>Loading...</p>
       </section>
