@@ -20,7 +20,7 @@ const AllMeetupsPage = () => {
             loadedData.push({
                id: key,
                title: data[key].title,
-               adress: data[key].adress,
+               address: data[key].address,
                image: data[key].image,
                description: data[key].description,
             })
