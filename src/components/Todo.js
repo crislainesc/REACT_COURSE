@@ -10,14 +10,18 @@ const Todo = (props) => {
       setShowModal(true)
    }
 
+   const closeModalHandler = () => {
+      setShowModal(false);
+   }
+
    return (
       <div className='card'>
          <h2>{props.text}</h2>
          <div className='actions'>
             <button className='btn' onClick={deleteTodoHandler}>Delete</button>
          </div>
-         {showModal && <Modal />}
-         {showModal && <Backdrop />}
+         {showModal && <Modal onCancel={closeModalHandler} onConfirm={closeModalHandler} />}
+         {showModal && <Backdrop onClick={closeModalHandler} />}
       </div>
    );
 };
